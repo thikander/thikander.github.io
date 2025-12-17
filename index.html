@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#0b0f16">
+    <meta name="color-scheme" content="dark light">
 
     <title>Thikander</title>
     <meta name="title" content="Thikander">
-    <meta name="description" content="Page created by Thikander">
+    <meta name="description" content="Theerapat Pinkrajan - Personal Portfolio">
     <meta name="keywords" content="Thikander, web development, modern web, minimal design, Tailwind CSS">
     <meta name="author" content="Thikander">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -39,9 +39,9 @@
     <meta name="twitter:image:alt" content="Welcome to GitHub Pages">
 
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😗</text></svg>">
     <link rel="apple-touch-icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😗</text></svg>">
 
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
@@ -102,41 +102,39 @@
         })();
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js"
+        }
+    }
+    </script>
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "GitHub Pages",
+        "@type": "Person",
+        "name": "Theerapat Pinkrajan",
         "url": "https://thikander.github.io/",
-        "description": "Page created by Thikander",
-        "publisher": {
-            "@type": "Organization",
-            "name": "GitHub Pages"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://thikander.github.io/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+        "description": "Theerapat Pinkrajan - Personal Portfolio"
     }
     </script>
 
     <style>
         :root {
-            --color-bg: #ffffff;
-            --color-text: #111827;
-            --color-text-muted: #6b7280;
+            --color-bg: #000000;
+            --color-text: #f1f5f9;
+            --color-text-muted: #cbd5e1;
             --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
             --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --color-bg: #0a0a0a;
-                --color-text: #fafafa;
-                --color-text-muted: #a3a3a3;
-            }
+            --scroll: 0;
+            --cursor-x: 50%;
+            --cursor-y: 50%;
+            --lift: 0;
+            --visible: 0;
+            --lx: 0;
+            --ly: 0;
+            --font: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif';
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -168,6 +166,12 @@
                 background: white !important;
                 color: black !important;
             }
+        }
+
+        html,
+        body {
+            background: radial-gradient(circle at 30% 25%, #020617, #0a0f1a 25%, #0f172a 45%, #1e1b4b 65%, #0a0f1a 85%, #000000 100%);
+            color: var(--color-text);
         }
 
         img[src*="profile"] {
@@ -203,148 +207,47 @@
 
         .profile-border-container {
             position: relative;
-            padding: 1px;
-            background: linear-gradient(135deg, #e5e5e7 0%, #f5f5f7 50%, #e5e5e7 100%);
-            border-radius: 12px;
-            isolation: isolate;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .profile-border-container:hover {
-            background: linear-gradient(135deg, #d2d2d7 0%, #e5e5e7 50%, #d2d2d7 100%);
-        }
-
-        .profile-border-container::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 13px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.03));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: exclude;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .profile-border-container:hover::before {
-            opacity: 1;
-        }
-
-        .profile-border-container::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .profile-border-container:hover::after {
-            opacity: 1;
+            padding: 2.5px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.2));
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            will-change: transform;
+            contain: layout paint style;
+            flex-shrink: 0;
         }
 
         .profile-border-inner {
             position: relative;
-            background: #ffffff;
-            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(5, 10, 20, 0.98), rgba(10, 15, 26, 0.95));
+            border-radius: 13.5px;
             overflow: hidden;
-            box-shadow:
-                0 1px 3px rgba(0, 0, 0, 0.05),
-                0 4px 12px rgba(0, 0, 0, 0.08),
-                inset 0 1px 0 rgba(255, 255, 255, 0.9);
-            transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .profile-border-inner:hover {
-            box-shadow:
-                0 2px 6px rgba(0, 0, 0, 0.08),
-                0 8px 24px rgba(0, 0, 0, 0.12),
-                inset 0 1px 0 rgba(255, 255, 255, 0.95);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .profile-border-inner {
-                background: #1d1d1f;
-                box-shadow:
-                    0 1px 3px rgba(0, 0, 0, 0.3),
-                    0 4px 12px rgba(0, 0, 0, 0.4),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-            }
-
-            .profile-border-inner:hover {
-                box-shadow:
-                    0 2px 6px rgba(0, 0, 0, 0.4),
-                    0 8px 24px rgba(0, 0, 0, 0.5),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            }
-
-            .profile-border-container {
-                background: linear-gradient(135deg, #2c2c2e 0%, #3a3a3c 50%, #2c2c2e 100%);
-            }
-
-            .profile-border-container:hover {
-                background: linear-gradient(135deg, #3a3a3c 0%, #48484a 50%, #3a3a3c 100%);
-            }
-
-            .profile-border-container::after {
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-            }
+            width: 100%;
+            height: 100%;
         }
 
         .profile-image-wrapper {
             position: relative;
             display: block;
-            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            border-radius: 13.5px;
             overflow: hidden;
             transform: translateZ(0);
-            will-change: transform;
-        }
-
-        .profile-image-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
-            background-size: 200% 200%;
-            animation: shimmer 4s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 1;
-            border-radius: 8px;
-            opacity: 0;
-        }
-
-        .profile-image-wrapper:hover::before {
-            opacity: 1;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .profile-image-wrapper::before {
-                background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.08) 50%, transparent 60%);
-            }
+            will-change: transform, filter;
         }
 
         .profile-image-wrapper img {
-            position: relative;
-            z-index: 2;
-            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: contrast(1.02) saturate(1.05);
-            transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            object-position: center;
+            border-radius: 13.5px;
+            filter: contrast(1.12) saturate(1.15) brightness(1.05) hue-rotate(-2deg);
+            transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .profile-image-wrapper:hover img {
-            transform: scale(1.01);
-            filter: contrast(1.03) saturate(1.08);
-        }
-
 
         @keyframes shimmer {
 
@@ -369,43 +272,323 @@
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
         }
+
+        html {
+            transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1), color 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        main {
+            background: transparent;
+        }
+
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-variation-settings: "wght" calc(200 + var(--scroll) * 100), "opsz" calc(10 + var(--scroll) * 50);
+            letter-spacing: calc(0.02em + var(--visible) * 0.02em);
+            opacity: calc(0.6 + var(--visible) * 0.4);
+            filter: brightness(calc(0.95 + var(--scroll) * 0.05));
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), letter-spacing 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 200;
+            will-change: filter, opacity, transform;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h1 span {
+            display: inline-block;
+        }
+
+        .profile-image-wrapper img {
+            filter: contrast(calc(1.02 + var(--scroll) * 0.05)) saturate(calc(1.05 + var(--scroll) * 0.08)) brightness(calc(0.98 + var(--scroll) * 0.02));
+            transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: filter, transform;
+        }
+
+        .profile-border-container {
+            transform: none;
+            box-shadow: none;
+            transition: none;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #e5e5e7 25%, #f5f5f7 37%, #e5e5e7 63%);
+            background-size: 400% 100%;
+            animation: skeleton-shimmer 1.4s ease-in-out infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-shimmer {
+            0% {
+                background-position: 100% 0;
+            }
+
+            100% {
+                background-position: -100% 0;
+            }
+        }
+
+        .skeleton-fade-out {
+            animation: skeleton-fade 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes skeleton-fade {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .content-fade-in {
+            animation: content-fade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes content-fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .motion-respect {
+                display: none;
+            }
+        }
+
+        .motion-respect {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.75rem;
+            color: #6b7280;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.04) 1px, rgba(0, 0, 0, 0.04) 2px),
+                repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0, 0, 0, 0.04) 1px, rgba(0, 0, 0, 0.04) 2px),
+                repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(0, 0, 0, 0.02) 1px, rgba(0, 0, 0, 0.02) 2px);
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 9999;
+            animation: grain 0.8s steps(3) infinite;
+            mix-blend-mode: overlay;
+            will-change: transform;
+        }
+
+        @keyframes grain {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-8%, -8%) rotate(0.5deg);
+            }
+
+            20% {
+                transform: translate(-12%, 8%) rotate(-0.5deg);
+            }
+
+            30% {
+                transform: translate(8%, -12%) rotate(0.3deg);
+            }
+
+            40% {
+                transform: translate(-8%, 18%) rotate(-0.3deg);
+            }
+
+            50% {
+                transform: translate(-12%, 8%) rotate(0.2deg);
+            }
+
+            60% {
+                transform: translate(18%, 0) rotate(-0.2deg);
+            }
+
+            70% {
+                transform: translate(0, 12%) rotate(0.4deg);
+            }
+
+            80% {
+                transform: translate(-18%, 0) rotate(-0.4deg);
+            }
+
+            90% {
+                transform: translate(12%, 8%) rotate(0.1deg);
+            }
+        }
+
+        main {
+            --focus-ratio: 1;
+            opacity: calc(0.7 + var(--focus-ratio) * 0.3);
+            filter: contrast(calc(0.98 + var(--focus-ratio) * 0.07)) saturate(calc(0.98 + var(--focus-ratio) * 0.05));
+            transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), filter 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 1200px;
+            width: 100%;
+            padding: 48px 32px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(10, 15, 26, 0.9), rgba(5, 10, 20, 0.85));
+            backdrop-filter: blur(20px) saturate(150%);
+            box-shadow:
+                0 32px 100px rgba(0, 0, 0, 0.8),
+                0 16px 48px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+
+        main[data-focus="false"] {
+            opacity: 0.6;
+            filter: contrast(0.97) saturate(0.97);
+        }
+
+        .profile-border-container {
+            box-shadow:
+                calc(var(--lx) * 2px) calc(var(--ly) * 2px) 40px rgba(0, 0, 0, 0.2),
+                calc(var(--lx) * 0.5px) calc(var(--ly) * 0.5px) 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scale(1) translateY(0);
+            }
+
+            50% {
+                transform: scale(1.015) translateY(-1px);
+            }
+        }
+
+        .profile-border-container.idle {
+            animation: breathe 3.5s ease-in-out infinite;
+        }
+
+        body[data-depth="deep"] {
+            --font: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif';
+        }
+
+        body {
+            font-family: var(--font);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        p {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .debug * {
+            outline: 1px dashed rgba(255, 0, 0, 0.3) !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body::after {
+                display: none;
+            }
+
+            h1 {
+                filter: none;
+                animation: none;
+            }
+
+            .profile-border-container.idle {
+                animation: none;
+            }
+
+            main {
+                background: transparent;
+            }
+        }
     </style>
 </head>
 
-<body class="bg-white dark:bg-[#0a0a0a] min-h-screen flex items-center justify-center antialiased" data-theme="light"
-    aria-label="Main content">
+<body class="min-h-screen flex items-center justify-center antialiased" data-theme="light" aria-label="Main content">
+    <canvas id="three-canvas"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.25;"></canvas>
 
     <a href="#main-content"
         class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:shadow-lg">
         Skip to main content
     </a>
 
-    <main id="main-content" class="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto" role="main"
-        aria-label="Welcome message">
+    <div class="motion-respect">Motion respects system preferences</div>
 
-        <div class="flex flex-col items-center mb-8 sm:mb-12 animate-scale-in"
-            style="animation-delay: 0.05s; animation-fill-mode: both;">
-            <div class="profile-border-container w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
-                <div class="profile-border-inner w-full h-full">
+    <main id="main-content" class="relative z-10" role="main" aria-label="Welcome message">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
+            <div class="profile-border-container w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 relative flex-shrink-0"
+                tabindex="0" role="img" aria-label="Profile picture">
+                <div class="profile-border-inner w-full h-full relative z-10">
                     <div class="profile-image-wrapper w-full h-full">
-                        <img src="assets/profile.png" alt="Profile picture of Thikander" class="w-full h-full"
-                            loading="eager" decoding="async" width="192" height="192">
+                        <img src="assets/main_profile.png" alt="Profile picture of Thikander" loading="eager"
+                            decoding="async" id="profile-img-src">
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 lg:gap-5 flex-1 max-w-2xl">
+                <div class="space-y-2">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-slate-100 leading-tight tracking-wide"
+                        style="font-weight: 200;">
+                        <span class="inline-block">Theerapat</span>
+                        <span class="inline-block">Pinkrajan</span>
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl font-extralight text-slate-400 tracking-wide"
+                        style="font-weight: 200;">
+                        Senior Full Stack Developer
+                    </p>
+                </div>
+                <div class="text-sm sm:text-base text-slate-200/90 leading-relaxed space-y-3 max-w-xl">
+                    <p>I'm a Full Stack Developer with 4 years of experience working on web systems for real business
+                        use. My main experience is with Angular, along with .NET Core, Spring Boot, and PostgreSQL, and
+                        I enjoy learning new frameworks and programming languages.</p>
+                    <p>I usually work across frontend and backend, help design databases, improve query performance, and
+                        support deployment using Docker and GitHub Actions on AWS. In my own time, I build side projects
+                        using different stacks to explore new tools and improve my skills. I focus on writing clear,
+                        maintainable code and building systems that are stable and practical.</p>
+                </div>
+                <div class="flex flex-col gap-2.5 items-center lg:items-start w-full">
+                    <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,angular,nextjs,vue,svelte,tailwind,bootstrap,htmx&size=36"
+                        alt="Frontend skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=nodejs,express,deno,bun,dotnet,java,py,go,prisma&size=36"
+                        alt="Backend skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=mysql,postgres,firebase,redis&size=36"
+                        alt="Database skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=docker,kubernetes,ubuntu,githubactions,jenkins&size=36"
+                        alt="DevOps skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=git,github,vscode,visualstudio,figma,ps&size=36"
+                        alt="Tools" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=npm,pnpm,yarn,tauri,electron,bash&size=36" alt="Runtimes"
+                        class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <div
+                        class="text-xs sm:text-sm text-slate-200/90 px-3 py-1.5 rounded-lg bg-slate-950/80 border border-slate-900/80 shadow-sm">
+                        Cursor · ChatGPT · Claude · Gemini · GitHub Copilot · Perplexity
                     </div>
                 </div>
             </div>
         </div>
-
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 dark:text-gray-50 mb-4 sm:mb-6 leading-tight tracking-tight animate-fade-in"
-            style="animation-delay: 0.1s; animation-fill-mode: both;">
-            <span class="inline-block animate-slide-up" style="animation-delay: 0.2s; animation-fill-mode: both;">
-                Welcome to
-            </span>
-            <br class="sm:hidden">
-            <span class="inline-block animate-slide-up font-normal"
-                style="animation-delay: 0.3s; animation-fill-mode: both;">
-                GitHub Pages
-            </span>
-        </h1>
     </main>
 
     <script type="module">
@@ -425,29 +608,13 @@
             }
 
             const themeManager = {
-                init() {
-                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    const savedTheme = localStorage.getItem('theme');
-                    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-                    this.applyTheme(theme);
-                    this.setupListener();
-                },
-
+                init() { this.applyTheme('light'); },
                 applyTheme(theme) {
-                    document.documentElement.classList.toggle('dark', theme === 'dark');
-                    document.body.setAttribute('data-theme', theme);
-                    localStorage.setItem('theme', theme);
+                    document.documentElement.classList.remove('dark');
+                    document.body.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
                 },
-
-                setupListener() {
-                    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                    mediaQuery.addEventListener('change', (e) => {
-                        if (!localStorage.getItem('theme')) {
-                            this.applyTheme(e.matches ? 'dark' : 'light');
-                        }
-                    });
-                }
+                setupListener() { }
             };
 
             const a11y = {
@@ -481,34 +648,12 @@
 
             const errorHandler = {
                 init() {
-                    window.addEventListener('error', (e) => {
-                    });
-
-                    window.addEventListener('unhandledrejection', (e) => {
-                    });
+                    window.addEventListener('error', (e) => { });
+                    window.addEventListener('unhandledrejection', (e) => { });
                 }
             };
 
-            const animationObserver = {
-                init() {
-                    if ('IntersectionObserver' in window) {
-                        const observer = new IntersectionObserver((entries) => {
-                            entries.forEach(entry => {
-                                if (entry.isIntersecting) {
-                                    entry.target.classList.add('animate-fade-in');
-                                }
-                            });
-                        }, {
-                            threshold: 0.1,
-                            rootMargin: '0px 0px -50px 0px'
-                        });
-
-                        document.querySelectorAll('[data-animate]').forEach(el => {
-                            observer.observe(el);
-                        });
-                    }
-                }
-            };
+            const animationObserver = { init() { } };
 
             const profileImageHandler = {
                 init() {
@@ -541,6 +686,202 @@
                 }
             };
 
+            const scrollLinkedInteractions = {
+                init() {
+                    let ticking = false;
+                    const onScroll = () => {
+                        if (!ticking) {
+                            requestAnimationFrame(() => {
+                                const p = Math.min(window.scrollY / 300, 1);
+                                document.documentElement.style.setProperty('--scroll', p);
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    };
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    onScroll();
+                }
+            };
+
+            const cursorAwareUI = {
+                init() {
+                    const profileCard = document.querySelector('.profile-border-container');
+                    if (!profileCard) return;
+
+                    profileCard.addEventListener('mousemove', (e) => {
+                        const rect = profileCard.getBoundingClientRect();
+                        const x = ((e.clientX - rect.left) / rect.width) * 100;
+                        const y = ((e.clientY - rect.top) / rect.height) * 100;
+                        profileCard.style.setProperty('--cursor-x', `${x}%`);
+                        profileCard.style.setProperty('--cursor-y', `${y}%`);
+                    }, { passive: true });
+                }
+            };
+
+            const attentionAwareText = {
+                init() {
+                    if (!('IntersectionObserver' in window)) return;
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            const visible = entry.isIntersecting ? 1 : 0;
+                            entry.target.style.setProperty('--visible', visible);
+                            entry.target.setAttribute('data-visible', visible);
+                        });
+                    }, {
+                        threshold: [0, 0.1, 0.5, 1],
+                        rootMargin: '-50px'
+                    });
+
+                    const h1 = document.querySelector('h1');
+                    if (h1) observer.observe(h1);
+                }
+            };
+
+            const skeletonLoader = {
+                init() {
+                    const profileImg = document.querySelector('.profile-image-wrapper img');
+                    if (!profileImg) return;
+
+                    const skeleton = document.createElement('div');
+                    skeleton.className = 'skeleton absolute inset-0';
+                    skeleton.setAttribute('aria-hidden', 'true');
+                    profileImg.parentElement.style.position = 'relative';
+                    profileImg.parentElement.appendChild(skeleton);
+
+                    const handleLoad = () => {
+                        skeleton.classList.add('skeleton-fade-out');
+                        profileImg.classList.add('content-fade-in');
+                        setTimeout(() => {
+                            if (skeleton.parentElement) {
+                                skeleton.parentElement.removeChild(skeleton);
+                            }
+                        }, 400);
+                    };
+
+                    if (profileImg.complete && profileImg.naturalHeight !== 0) {
+                        handleLoad();
+                    } else {
+                        profileImg.addEventListener('load', handleLoad, { once: true });
+                    }
+                }
+            };
+
+
+
+            const focusBasedEmphasis = {
+                init() {
+                    if (!('IntersectionObserver' in window)) return;
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            const ratio = entry.intersectionRatio;
+                            entry.target.setAttribute('data-focus', entry.isIntersecting);
+                            entry.target.style.setProperty('--focus-ratio', ratio);
+                        });
+                    }, {
+                        threshold: [0, 0.25, 0.5, 0.75, 1],
+                        rootMargin: '-15% 0px -15% 0px'
+                    });
+
+                    const main = document.querySelector('main');
+                    if (main) observer.observe(main);
+                }
+            };
+
+            const ambientLightSource = {
+                init() {
+                    const profileCard = document.querySelector('.profile-border-container');
+                    if (!profileCard) return;
+
+                    let targetLx = 0;
+                    let targetLy = 0;
+                    let currentLx = 0;
+                    let currentLy = 0;
+                    let rafId = null;
+
+                    const animate = () => {
+                        currentLx += (targetLx - currentLx) * 0.2;
+                        currentLy += (targetLy - currentLy) * 0.2;
+
+                        profileCard.style.setProperty('--lx', currentLx);
+                        profileCard.style.setProperty('--ly', currentLy);
+
+                        if (Math.abs(targetLx - currentLx) > 0.1 || Math.abs(targetLy - currentLy) > 0.1) {
+                            rafId = requestAnimationFrame(animate);
+                        }
+                    };
+
+                    document.addEventListener('mousemove', (e) => {
+                        const rect = profileCard.getBoundingClientRect();
+                        const centerX = rect.left + rect.width / 2;
+                        const centerY = rect.top + rect.height / 2;
+                        targetLx = (e.clientX - centerX) / 15;
+                        targetLy = (e.clientY - centerY) / 15;
+
+                        if (!rafId) {
+                            rafId = requestAnimationFrame(animate);
+                        }
+                    }, { passive: true });
+
+                    document.addEventListener('mouseleave', () => {
+                        targetLx = 0;
+                        targetLy = 0;
+                        if (!rafId) {
+                            rafId = requestAnimationFrame(animate);
+                        }
+                    });
+                }
+            };
+
+            const idleAnimations = {
+                init() {
+                    const profileCard = document.querySelector('.profile-border-container');
+                    if (!profileCard) return;
+
+                    let mouseMoveTimer;
+                    let isIdle = true;
+
+                    const setIdle = () => {
+                        isIdle = true;
+                        profileCard.classList.add('idle');
+                    };
+
+                    const clearIdle = () => {
+                        isIdle = false;
+                        profileCard.classList.remove('idle');
+                        clearTimeout(mouseMoveTimer);
+                        mouseMoveTimer = setTimeout(setIdle, 2000);
+                    };
+
+                    document.addEventListener('mousemove', clearIdle, { passive: true });
+                    document.addEventListener('mousedown', clearIdle, { passive: true });
+                    document.addEventListener('keydown', clearIdle, { passive: true });
+
+                    setTimeout(setIdle, 2000);
+                }
+            };
+
+            const scrollActivatedFontSwap = {
+                init() {
+                    const onScroll = () => {
+                        const scrollDepth = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+                        if (scrollDepth > 0.5) {
+                            document.body.setAttribute('data-depth', 'deep');
+                        } else {
+                            document.body.removeAttribute('data-depth');
+                        }
+                    };
+                    window.addEventListener('scroll', onScroll, { passive: true });
+                    onScroll();
+                }
+            };
+
+            const devToolsDebug = {
+                init() { if (location.hash === '#debug') document.body.classList.add('debug'); }
+            };
+
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', init);
             } else {
@@ -548,25 +889,265 @@
             }
 
             function init() {
+                devToolsDebug.init();
                 themeManager.init();
                 a11y.init();
                 errorHandler.init();
                 animationObserver.init();
                 profileImageHandler.init();
+                scrollLinkedInteractions.init();
+                cursorAwareUI.init();
+                attentionAwareText.init();
+                skeletonLoader.init();
+                focusBasedEmphasis.init();
+                ambientLightSource.init();
+                idleAnimations.init();
+                scrollActivatedFontSwap.init();
+            }
+
+            const threeScene = {
+                async init() {
+                    let THREE;
+                    try {
+                        THREE = await import('three');
+                        THREE = THREE.default || THREE;
+                    } catch (e) {
+                        return;
+                    }
+                    const canvas = document.getElementById('three-canvas');
+                    if (!canvas) return;
+                    const scene = new THREE.Scene();
+                    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                    const particlesGeometry = new THREE.BufferGeometry();
+                    const particlesCount = 1900;
+                    const posArray = new Float32Array(particlesCount * 3);
+                    const velocityArray = new Float32Array(particlesCount * 3);
+                    const basePositions = new Float32Array(particlesCount * 3);
+                    for (let i = 0; i < particlesCount; i++) {
+                        const r = Math.random() * 6.5 + 2;
+                        const theta = Math.random() * Math.PI * 2;
+                        const phi = Math.acos((Math.random() * 2) - 1);
+                        const x = r * Math.sin(phi) * Math.cos(theta);
+                        const y = r * Math.sin(phi) * Math.sin(theta);
+                        const z = r * Math.cos(phi);
+                        posArray[i * 3] = x;
+                        posArray[i * 3 + 1] = y;
+                        posArray[i * 3 + 2] = z;
+                        basePositions[i * 3] = x;
+                        basePositions[i * 3 + 1] = y;
+                        basePositions[i * 3 + 2] = z;
+                        velocityArray[i * 3] = (Math.random() - 0.5) * 0.0018;
+                        velocityArray[i * 3 + 1] = (Math.random() - 0.5) * 0.0018;
+                        velocityArray[i * 3 + 2] = (Math.random() - 0.5) * 0.0015;
+                    }
+                    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                    const particlesMaterial = new THREE.PointsMaterial({
+                        size: 0.036,
+                        color: 0xa5b4fc,
+                        transparent: true,
+                        opacity: 0.55,
+                        blending: THREE.AdditiveBlending,
+                        depthWrite: false
+                    });
+                    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+                    scene.add(particlesMesh);
+                    const ringCount = 320;
+                    const ringPositions = new Float32Array(ringCount * 3);
+                    const ringBase = [];
+                    for (let i = 0; i < ringCount; i++) {
+                        const r = 1.1 + Math.random() * 1.6;
+                        const theta = Math.random() * Math.PI * 2;
+                        const z = (Math.random() - 0.5) * 0.6;
+                        ringBase.push({ r, theta, z });
+                        ringPositions[i * 3] = Math.cos(theta) * r;
+                        ringPositions[i * 3 + 1] = Math.sin(theta) * r * 0.4;
+                        ringPositions[i * 3 + 2] = z;
+                    }
+                    const ringGeometry = new THREE.BufferGeometry();
+                    ringGeometry.setAttribute('position', new THREE.BufferAttribute(ringPositions, 3));
+                    const ringMaterial = new THREE.PointsMaterial({
+                        size: 0.028,
+                        color: 0x818cf8,
+                        transparent: true,
+                        opacity: 0.6,
+                        blending: THREE.AdditiveBlending,
+                        depthWrite: false
+                    });
+                    const ringMesh = new THREE.Points(ringGeometry, ringMaterial);
+                    scene.add(ringMesh);
+                    const torusGeometry = new THREE.TorusGeometry(2.5, 0.08, 16, 100);
+                    const torusMaterial = new THREE.MeshBasicMaterial({
+                        color: 0x6366f1,
+                        transparent: true,
+                        opacity: 0.25,
+                        wireframe: true
+                    });
+                    const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+                    scene.add(torus);
+                    const icosahedronGeometry = new THREE.IcosahedronGeometry(1.8, 0);
+                    const icosahedronMaterial = new THREE.MeshBasicMaterial({
+                        color: 0x8b5cf6,
+                        transparent: true,
+                        opacity: 0.2,
+                        wireframe: true
+                    });
+                    const icosahedron = new THREE.Mesh(icosahedronGeometry, icosahedronMaterial);
+                    scene.add(icosahedron);
+                    const ambientLight = new THREE.AmbientLight(0x6366f1, 0.3);
+                    scene.add(ambientLight);
+                    const pointLight = new THREE.PointLight(0x8b5cf6, 0.8, 100);
+                    pointLight.position.set(5, 5, 5);
+                    scene.add(pointLight);
+                    camera.position.z = 9;
+                    let mouseX = 0;
+                    let mouseY = 0;
+                    const profileContainer = document.querySelector('.profile-border-container');
+                    let hoveringProfile = false;
+                    document.addEventListener('mousemove', (e) => {
+                        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+                        mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+                    }, { passive: true });
+                    if (profileContainer) {
+                        profileContainer.addEventListener('mouseenter', () => {
+                            hoveringProfile = true;
+                        });
+                        profileContainer.addEventListener('mouseleave', () => {
+                            hoveringProfile = false;
+                        });
+                    }
+                    const getProfileCenter = () => {
+                        if (!profileContainer) return new THREE.Vector3(0, 0, 0);
+                        const rect = profileContainer.getBoundingClientRect();
+                        const x = ((rect.left + rect.width / 2) / window.innerWidth) * 2 - 1;
+                        const y = -(((rect.top + rect.height / 2) / window.innerHeight) * 2 - 1);
+                        const v = new THREE.Vector3(x, y, 0).unproject(camera);
+                        return v;
+                    };
+                    const clock = new THREE.Clock();
+                    const animate = () => {
+                        requestAnimationFrame(animate);
+                        const elapsed = clock.getElapsedTime();
+                        const positions = particlesGeometry.attributes.position.array;
+                        const target = hoveringProfile ? getProfileCenter() : new THREE.Vector3(0, 0, 0);
+                        const pulse = 0.4 + Math.sin(elapsed * 0.8) * 0.4;
+                        const hueShift = 0.62 + Math.sin(elapsed * 0.22) * 0.035;
+                        particlesMaterial.color.setHSL(hueShift, 0.12 + (hoveringProfile ? 0.14 : 0.08), 0.48 + pulse * 0.05);
+                        ringMaterial.color.setHSL(hueShift + 0.04, 0.2, 0.6 + pulse * 0.05);
+                        const basePull = (hoveringProfile ? 0.07 : 0.018) + pulse * 0.01;
+                        const anchorPull = hoveringProfile ? 0.008 : 0.013;
+                        const minRadius = hoveringProfile ? 1.7 : 3.3;
+                        const maxRadius = hoveringProfile ? 5.0 : 7.8;
+                        for (let i = 0; i < particlesCount; i++) {
+                            const ix = i * 3;
+                            const iy = ix + 1;
+                            const iz = ix + 2;
+                            let px = positions[ix];
+                            let py = positions[iy];
+                            let pz = positions[iz];
+                            const swirl = 0.0028;
+                            const sinT = Math.sin(elapsed * 0.9 + i * 0.17) * swirl;
+                            const cosT = Math.cos(elapsed * 0.95 + i * 0.11) * swirl;
+                            px += velocityArray[ix] + cosT;
+                            py += velocityArray[iy] + sinT;
+                            pz += velocityArray[iz] * 0.6;
+                            const dx = target.x - px;
+                            const dy = target.y - py;
+                            const dz = target.z - pz;
+                            const dist = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1;
+                            const strength = basePull * (hoveringProfile ? 1.4 : 1) / dist;
+                            px += dx * strength;
+                            py += dy * strength;
+                            pz += dz * strength;
+                            const bax = basePositions[ix] - px;
+                            const bay = basePositions[iy] - py;
+                            const baz = basePositions[iz] - pz;
+                            px += bax * anchorPull;
+                            py += bay * anchorPull;
+                            pz += baz * anchorPull;
+                            const current = Math.sqrt(px * px + py * py + pz * pz);
+                            if (current < minRadius) {
+                                const ratio = minRadius / (current || 1);
+                                px *= ratio;
+                                py *= ratio;
+                                pz *= ratio;
+                            } else if (current > maxRadius) {
+                                const ratio = maxRadius / current;
+                                px *= ratio;
+                                py *= ratio;
+                                pz *= ratio;
+                            }
+                            positions[ix] = px;
+                            positions[iy] = py;
+                            positions[iz] = pz;
+                        }
+                        particlesGeometry.attributes.position.needsUpdate = true;
+                        const ringArr = ringGeometry.attributes.position.array;
+                        for (let i = 0; i < ringCount; i++) {
+                            const ix = i * 3;
+                            const iy = ix + 1;
+                            const iz = ix + 2;
+                            const base = ringBase[i];
+                            const ang = base.theta + elapsed * 0.6 + i * 0.003 + (hoveringProfile ? 0.4 : 0.15);
+                            const rad = base.r * (hoveringProfile ? 1 + pulse * 0.08 : 1 + pulse * 0.14);
+                            const yWave = Math.sin(elapsed * 1.2 + i * 0.05) * (hoveringProfile ? 0.18 : 0.1);
+                            ringArr[ix] = target.x + Math.cos(ang) * rad;
+                            ringArr[iy] = target.y + Math.sin(ang) * rad * 0.4 + yWave;
+                            ringArr[iz] = target.z + base.z * 0.6 + Math.cos(elapsed * 0.9 + i * 0.07) * 0.08;
+                        }
+                        ringGeometry.attributes.position.needsUpdate = true;
+                        ringMaterial.size = 0.026 + pulse * 0.01 + (hoveringProfile ? 0.004 : 0);
+                        torus.rotation.x += 0.004;
+                        torus.rotation.y += 0.006;
+                        torus.rotation.z += 0.002;
+                        torus.scale.setScalar(1 + Math.sin(elapsed * 0.5) * 0.1);
+                        torusMaterial.opacity = 0.2 + Math.sin(elapsed * 0.8) * 0.1;
+                        icosahedron.rotation.x += 0.003;
+                        icosahedron.rotation.y += 0.005;
+                        icosahedron.rotation.z += 0.001;
+                        icosahedron.scale.setScalar(1 + Math.cos(elapsed * 0.6) * 0.12);
+                        icosahedronMaterial.opacity = 0.15 + Math.cos(elapsed * 0.7) * 0.1;
+                        pointLight.position.x = Math.sin(elapsed * 0.3) * 6;
+                        pointLight.position.y = Math.cos(elapsed * 0.4) * 6;
+                        pointLight.position.z = 5 + Math.sin(elapsed * 0.5) * 3;
+                        pointLight.intensity = 0.6 + Math.sin(elapsed * 0.8) * 0.3;
+                        const lookX = mouseX * 0.3;
+                        const lookY = mouseY * 0.3;
+                        camera.position.x += (lookX - camera.position.x) * 0.08;
+                        camera.position.y += (-lookY - camera.position.y) * 0.08;
+                        camera.lookAt(scene.position);
+                        renderer.render(scene, camera);
+                    };
+                    window.addEventListener('resize', () => {
+                        camera.aspect = window.innerWidth / window.innerHeight;
+                        camera.updateProjectionMatrix();
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                    }, { passive: true });
+                    animate();
+                }
+            };
+
+            const interactiveProfile3D = {
+                init() { }
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', async () => {
+                    await threeScene.init();
+                    await interactiveProfile3D.init();
+                });
+            } else {
+                (async () => {
+                    await threeScene.init();
+                    await interactiveProfile3D.init();
+                })();
             }
         })();
     </script>
 
-    <noscript>
-        <style>
-            .animate-fade-in,
-            .animate-slide-up,
-            .animate-scale-in {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-        </style>
-    </noscript>
+    <noscript></noscript>
 </body>
 
 </html>
