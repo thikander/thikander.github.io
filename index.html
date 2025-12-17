@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light dark">
+
+    <title>Thikander</title>
+    <meta name="title" content="Thikander">
+    <meta name="description" content="Page created by Thikander">
+    <meta name="keywords" content="Thikander, web development, modern web, minimal design, Tailwind CSS">
+    <meta name="author" content="Thikander">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thikander.github.io/">
+    <meta property="og:title" content="Welcome to GitHub Pages | Modern Web Experience">
+    <meta property="og:description"
+        content="A clean, minimal, and performant welcome page built with modern web technologies and best practices.">
+    <meta property="og:image" content="https://thikander.github.io/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Welcome to GitHub Pages">
+    <meta property="og:site_name" content="GitHub Pages">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://thikander.github.io/">
+    <meta name="twitter:title" content="Welcome to GitHub Pages | Modern Web Experience">
+    <meta name="twitter:description"
+        content="A clean, minimal, and performant welcome page built with modern web technologies and best practices.">
+    <meta name="twitter:image" content="https://thikander.github.io/og-image.jpg">
+    <meta name="twitter:image:alt" content="Welcome to GitHub Pages">
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <link rel="canonical" href="https://thikander.github.io/">
+
+    <script>
+        (function () {
+            window.tailwind = window.tailwind || {};
+            window.tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                50: '#fafafa',
+                                100: '#f5f5f5',
+                                200: '#e5e5e5',
+                                300: '#d4d4d4',
+                                400: '#a3a3a3',
+                                500: '#737373',
+                                600: '#525252',
+                                700: '#404040',
+                                800: '#262626',
+                                900: '#171717',
+                                950: '#0a0a0a',
+                            },
+                        },
+                        fontFamily: {
+                            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+                            mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                        },
+                        animation: {
+                            'fade-in': 'fadeIn 0.6s ease-in-out',
+                            'slide-up': 'slideUp 0.6s ease-out',
+                            'scale-in': 'scaleIn 0.5s ease-out',
+                        },
+                        keyframes: {
+                            fadeIn: {
+                                '0%': { opacity: '0' },
+                                '100%': { opacity: '1' },
+                            },
+                            slideUp: {
+                                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                                '100%': { transform: 'translateY(0)', opacity: '1' },
+                            },
+                            scaleIn: {
+                                '0%': { transform: 'scale(0.95)', opacity: '0' },
+                                '100%': { transform: 'scale(1)', opacity: '1' },
+                            },
+                        },
+                        transitionTimingFunction: {
+                            'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                        },
+                    },
+                },
+                darkMode: 'class',
+            };
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "GitHub Pages",
+        "url": "https://thikander.github.io/",
+        "description": "Page created by Thikander",
+        "publisher": {
+            "@type": "Organization",
+            "name": "GitHub Pages"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://thikander.github.io/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #111827;
+            --color-text-muted: #6b7280;
+            --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #0a0a0a;
+                --color-text: #fafafa;
+                --color-text-muted: #a3a3a3;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        *:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+        }
+
+        img[src*="profile"] {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        @supports (backdrop-filter: blur(10px)) {
+            .profile-container::before {
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        @keyframes profileGlow {
+
+            0%,
+            100% {
+                opacity: 0.75;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.02);
+            }
+        }
+
+        .profile-glow {
+            animation: profileGlow 3s ease-in-out infinite;
+        }
+
+        .profile-border-container {
+            position: relative;
+            padding: 1px;
+            background: linear-gradient(135deg, #e5e5e7 0%, #f5f5f7 50%, #e5e5e7 100%);
+            border-radius: 12px;
+            isolation: isolate;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-border-container:hover {
+            background: linear-gradient(135deg, #d2d2d7 0%, #e5e5e7 50%, #d2d2d7 100%);
+        }
+
+        .profile-border-container::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 13px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.03));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-border-container:hover::before {
+            opacity: 1;
+        }
+
+        .profile-border-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-border-container:hover::after {
+            opacity: 1;
+        }
+
+        .profile-border-inner {
+            position: relative;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.05),
+                0 4px 12px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-border-inner:hover {
+            box-shadow:
+                0 2px 6px rgba(0, 0, 0, 0.08),
+                0 8px 24px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .profile-border-inner {
+                background: #1d1d1f;
+                box-shadow:
+                    0 1px 3px rgba(0, 0, 0, 0.3),
+                    0 4px 12px rgba(0, 0, 0, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            }
+
+            .profile-border-inner:hover {
+                box-shadow:
+                    0 2px 6px rgba(0, 0, 0, 0.4),
+                    0 8px 24px rgba(0, 0, 0, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            }
+
+            .profile-border-container {
+                background: linear-gradient(135deg, #2c2c2e 0%, #3a3a3c 50%, #2c2c2e 100%);
+            }
+
+            .profile-border-container:hover {
+                background: linear-gradient(135deg, #3a3a3c 0%, #48484a 50%, #3a3a3c 100%);
+            }
+
+            .profile-border-container::after {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            }
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .profile-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
+            background-size: 200% 200%;
+            animation: shimmer 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+            border-radius: 8px;
+            opacity: 0;
+        }
+
+        .profile-image-wrapper:hover::before {
+            opacity: 1;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .profile-image-wrapper::before {
+                background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.08) 50%, transparent 60%);
+            }
+        }
+
+        .profile-image-wrapper img {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.02) saturate(1.05);
+            transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-image-wrapper:hover img {
+            transform: scale(1.01);
+            filter: contrast(1.03) saturate(1.08);
+        }
+
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                background-position: -200% 0;
+            }
+
+            50% {
+                background-position: 200% 0;
+            }
+        }
+
+        @supports (backdrop-filter: blur(10px)) {
+            .profile-border-container {
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        @supports (clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)) {
+            .profile-border-container {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-[#0a0a0a] min-h-screen flex items-center justify-center antialiased" data-theme="light"
+    aria-label="Main content">
+
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:shadow-lg">
+        Skip to main content
+    </a>
+
+    <main id="main-content" class="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto" role="main"
+        aria-label="Welcome message">
+
+        <div class="flex flex-col items-center mb-8 sm:mb-12 animate-scale-in"
+            style="animation-delay: 0.05s; animation-fill-mode: both;">
+            <div class="profile-border-container w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
+                <div class="profile-border-inner w-full h-full">
+                    <div class="profile-image-wrapper w-full h-full">
+                        <img src="assets/profile.png" alt="Profile picture of Thikander" class="w-full h-full"
+                            loading="eager" decoding="async" width="192" height="192">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 dark:text-gray-50 mb-4 sm:mb-6 leading-tight tracking-tight animate-fade-in"
+            style="animation-delay: 0.1s; animation-fill-mode: both;">
+            <span class="inline-block animate-slide-up" style="animation-delay: 0.2s; animation-fill-mode: both;">
+                Welcome to
+            </span>
+            <br class="sm:hidden">
+            <span class="inline-block animate-slide-up font-normal"
+                style="animation-delay: 0.3s; animation-fill-mode: both;">
+                GitHub Pages
+            </span>
+        </h1>
+    </main>
+
+    <script type="module">
+        (function () {
+            'use strict';
+
+            const perfObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.entryType === 'navigation') {
+                    }
+                }
+            });
+
+            try {
+                perfObserver.observe({ entryTypes: ['navigation'] });
+            } catch (e) {
+            }
+
+            const themeManager = {
+                init() {
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    const savedTheme = localStorage.getItem('theme');
+                    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+                    this.applyTheme(theme);
+                    this.setupListener();
+                },
+
+                applyTheme(theme) {
+                    document.documentElement.classList.toggle('dark', theme === 'dark');
+                    document.body.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                },
+
+                setupListener() {
+                    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                    mediaQuery.addEventListener('change', (e) => {
+                        if (!localStorage.getItem('theme')) {
+                            this.applyTheme(e.matches ? 'dark' : 'light');
+                        }
+                    });
+                }
+            };
+
+            const a11y = {
+                init() {
+                    this.handleKeyboardNavigation();
+                    this.announcePageLoad();
+                },
+
+                handleKeyboardNavigation() {
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape') {
+                            document.activeElement?.blur();
+                        }
+                    });
+                },
+
+                announcePageLoad() {
+                    const announcement = document.createElement('div');
+                    announcement.setAttribute('role', 'status');
+                    announcement.setAttribute('aria-live', 'polite');
+                    announcement.setAttribute('aria-atomic', 'true');
+                    announcement.className = 'sr-only';
+                    announcement.textContent = 'Page loaded successfully';
+                    document.body.appendChild(announcement);
+
+                    setTimeout(() => {
+                        document.body.removeChild(announcement);
+                    }, 1000);
+                }
+            };
+
+            const errorHandler = {
+                init() {
+                    window.addEventListener('error', (e) => {
+                    });
+
+                    window.addEventListener('unhandledrejection', (e) => {
+                    });
+                }
+            };
+
+            const animationObserver = {
+                init() {
+                    if ('IntersectionObserver' in window) {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('animate-fade-in');
+                                }
+                            });
+                        }, {
+                            threshold: 0.1,
+                            rootMargin: '0px 0px -50px 0px'
+                        });
+
+                        document.querySelectorAll('[data-animate]').forEach(el => {
+                            observer.observe(el);
+                        });
+                    }
+                }
+            };
+
+            const profileImageHandler = {
+                init() {
+                    const profileImg = document.querySelector('img[src*="profile"]');
+                    if (!profileImg) return;
+
+                    profileImg.addEventListener('load', () => {
+                        profileImg.classList.add('opacity-100');
+                        profileImg.classList.remove('opacity-0');
+                    });
+
+                    profileImg.addEventListener('error', () => {
+                        profileImg.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Crect width="200" height="200" fill="%23e5e7eb"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%239ca3af" font-family="sans-serif" font-size="14"%3EProfile%3C/text%3E%3C/svg%3E';
+                        profileImg.alt = 'Profile image not available';
+                    });
+
+                    if (profileImg.complete && profileImg.naturalHeight !== 0) {
+                        profileImg.classList.add('opacity-100');
+                    } else {
+                        profileImg.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                    }
+
+                    if ('loading' in HTMLImageElement.prototype) {
+                        profileImg.loading = 'eager';
+                    }
+
+                    if ('fetchPriority' in profileImg) {
+                        profileImg.fetchPriority = 'high';
+                    }
+                }
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+
+            function init() {
+                themeManager.init();
+                a11y.init();
+                errorHandler.init();
+                animationObserver.init();
+                profileImageHandler.init();
+            }
+        })();
+    </script>
+
+    <noscript>
+        <style>
+            .animate-fade-in,
+            .animate-slide-up,
+            .animate-scale-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+</body>
+
+</html>
