@@ -21,8 +21,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thikander.github.io/">
     <meta property="og:title" content="GitHub Pages">
-    <meta property="og:description"
-        content="Theerapat Pinkrajan GitHub Pages">
+    <meta property="og:description" content="Theerapat Pinkrajan GitHub Pages">
     <meta property="og:image" content="https://thikander.github.io/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -102,13 +101,6 @@
         })();
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js"
-        }
-    }
-    </script>
 
     <script type="application/ld+json">
     {
@@ -137,6 +129,12 @@
             --font: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif';
         }
 
+        html {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
         @media (prefers-reduced-motion: reduce) {
 
             *,
@@ -153,12 +151,14 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
+            box-sizing: border-box;
         }
 
         *:focus-visible {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-            border-radius: 4px;
+            outline: 2px solid rgba(99, 102, 241, 0.6);
+            outline-offset: 3px;
+            border-radius: 8px;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
         }
 
         @media print {
@@ -170,8 +170,25 @@
 
         html,
         body {
-            background: radial-gradient(circle at 30% 25%, #020617, #0a0f1a 25%, #0f172a 45%, #1e1b4b 65%, #0a0f1a 85%, #000000 100%);
+            background: radial-gradient(ellipse at 30% 20%, #030712 0%, #0a0f1a 20%, #0f172a 40%, #1e1b4b 60%, #1a1544 75%, #0a0f1a 88%, #000000 100%);
             color: var(--color-text);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            pointer-events: none;
         }
 
         img[src*="profile"] {
@@ -179,6 +196,21 @@
             image-rendering: crisp-edges;
             backface-visibility: hidden;
             transform: translateZ(0);
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: auto;
+        }
+        
+        img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
         }
 
         @supports (backdrop-filter: blur(10px)) {
@@ -191,38 +223,49 @@
 
             0%,
             100% {
-                opacity: 0.75;
+                opacity: 0.8;
                 transform: scale(1);
+                filter: brightness(1) saturate(1);
             }
 
             50% {
                 opacity: 1;
-                transform: scale(1.02);
+                transform: scale(1.015);
+                filter: brightness(1.05) saturate(1.1);
             }
         }
 
         .profile-glow {
-            animation: profileGlow 3s ease-in-out infinite;
+            animation: profileGlow 3.5s ease-in-out infinite;
         }
 
         .profile-border-container {
             position: relative;
-            padding: 2.5px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.2));
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            padding: 3px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.3));
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.7),
+                0 10px 30px rgba(99, 102, 241, 0.15),
+                0 4px 16px rgba(0, 0, 0, 0.8),
+                inset 0 1px 1px rgba(255, 255, 255, 0.15),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.3);
             will-change: transform;
             contain: layout paint style;
             flex-shrink: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
         }
 
         .profile-border-inner {
             position: relative;
-            background: linear-gradient(135deg, rgba(5, 10, 20, 0.98), rgba(10, 15, 26, 0.95));
-            border-radius: 13.5px;
+            background: linear-gradient(135deg, rgba(5, 10, 20, 0.98), rgba(10, 15, 26, 0.96), rgba(15, 20, 35, 0.95));
+            border-radius: 17px;
             overflow: hidden;
             width: 100%;
             height: 100%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .profile-image-wrapper {
@@ -230,10 +273,26 @@
             display: block;
             width: 100%;
             height: 100%;
-            border-radius: 13.5px;
+            border-radius: 17px;
             overflow: hidden;
             transform: translateZ(0);
             will-change: transform, filter;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        .profile-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 2;
+            pointer-events: auto;
         }
 
         .profile-image-wrapper img {
@@ -244,9 +303,14 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            border-radius: 13.5px;
-            filter: contrast(1.12) saturate(1.15) brightness(1.05) hue-rotate(-2deg);
-            transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 17px;
+            filter: contrast(1.08) saturate(1.12) brightness(1.03);
+            transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .profile-image-wrapper:hover img {
+            filter: contrast(1.12) saturate(1.18) brightness(1.05);
+            transform: scale(1.02);
         }
 
         @keyframes shimmer {
@@ -254,10 +318,12 @@
             0%,
             100% {
                 background-position: -200% 0;
+                opacity: 0.8;
             }
 
             50% {
                 background-position: 200% 0;
+                opacity: 1;
             }
         }
 
@@ -288,18 +354,19 @@
         h1 {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-variation-settings: "wght" calc(200 + var(--scroll) * 100), "opsz" calc(10 + var(--scroll) * 50);
-            letter-spacing: calc(0.02em + var(--visible) * 0.02em);
-            opacity: calc(0.6 + var(--visible) * 0.4);
+            letter-spacing: calc(-0.02em + var(--visible) * 0.01em);
+            opacity: calc(0.65 + var(--visible) * 0.35);
             filter: brightness(calc(0.95 + var(--scroll) * 0.05));
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), letter-spacing 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 200;
             will-change: filter, opacity, transform;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background: linear-gradient(135deg, #e0e7ff, #c7d2fe, #a5b4fc);
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 35%, #c7d2fe 60%, #a5b4fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 40px rgba(165, 180, 252, 0.15);
         }
 
         h1 span {
@@ -307,8 +374,8 @@
         }
 
         .profile-image-wrapper img {
-            filter: contrast(calc(1.02 + var(--scroll) * 0.05)) saturate(calc(1.05 + var(--scroll) * 0.08)) brightness(calc(0.98 + var(--scroll) * 0.02));
-            transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: contrast(calc(1.04 + var(--scroll) * 0.04)) saturate(calc(1.08 + var(--scroll) * 0.06)) brightness(calc(0.99 + var(--scroll) * 0.02));
+            transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             will-change: filter, transform;
         }
 
@@ -319,10 +386,10 @@
         }
 
         .skeleton {
-            background: linear-gradient(90deg, #e5e5e7 25%, #f5f5f7 37%, #e5e5e7 63%);
+            background: linear-gradient(90deg, rgba(30, 41, 59, 0.4) 25%, rgba(51, 65, 85, 0.6) 37%, rgba(30, 41, 59, 0.4) 63%);
             background-size: 400% 100%;
-            animation: skeleton-shimmer 1.4s ease-in-out infinite;
-            border-radius: 8px;
+            animation: skeleton-shimmer 1.6s ease-in-out infinite;
+            border-radius: 17px;
         }
 
         @keyframes skeleton-shimmer {
@@ -383,15 +450,25 @@
             position: fixed;
             inset: 0;
             background-image:
-                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.04) 1px, rgba(0, 0, 0, 0.04) 2px),
-                repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0, 0, 0, 0.04) 1px, rgba(0, 0, 0, 0.04) 2px),
-                repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(0, 0, 0, 0.02) 1px, rgba(0, 0, 0, 0.02) 2px);
-            opacity: 0.05;
+                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.03) 1px, rgba(0, 0, 0, 0.03) 2px),
+                repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0, 0, 0, 0.03) 1px, rgba(0, 0, 0, 0.03) 2px),
+                repeating-linear-gradient(45deg, transparent, transparent 1px, rgba(0, 0, 0, 0.015) 1px, rgba(0, 0, 0, 0.015) 2px);
+            opacity: 0.04;
             pointer-events: none;
             z-index: 9999;
-            animation: grain 0.8s steps(3) infinite;
+            animation: grain 1s steps(4) infinite;
             mix-blend-mode: overlay;
             will-change: transform;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.3) 100%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.6;
         }
 
         @keyframes grain {
@@ -440,32 +517,72 @@
 
         main {
             --focus-ratio: 1;
-            opacity: calc(0.7 + var(--focus-ratio) * 0.3);
+            opacity: calc(0.75 + var(--focus-ratio) * 0.25);
             filter: contrast(calc(0.98 + var(--focus-ratio) * 0.07)) saturate(calc(0.98 + var(--focus-ratio) * 0.05));
-            transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), filter 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), 
+                       filter 500ms cubic-bezier(0.4, 0, 0.2, 1),
+                       transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+                       box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1),
+                       border-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
             max-width: 1200px;
-            width: 100%;
-            padding: 48px 32px;
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(10, 15, 26, 0.9), rgba(5, 10, 20, 0.85));
-            backdrop-filter: blur(20px) saturate(150%);
+            width: calc(100% - 64px);
+            margin: 32px;
+            padding: 56px 40px;
+            border-radius: 32px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(10, 15, 26, 0.92), rgba(5, 10, 20, 0.88), rgba(8, 12, 22, 0.90));
+            backdrop-filter: blur(24px) saturate(160%);
             box-shadow:
-                0 32px 100px rgba(0, 0, 0, 0.8),
-                0 16px 48px rgba(0, 0, 0, 0.7),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(99, 102, 241, 0.15);
+                0 40px 120px rgba(0, 0, 0, 0.85),
+                0 20px 60px rgba(0, 0, 0, 0.75),
+                0 8px 24px rgba(99, 102, 241, 0.08),
+                inset 0 1px 2px rgba(255, 255, 255, 0.1),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transform: translateY(0);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        main:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow:
+                0 44px 130px rgba(0, 0, 0, 0.88),
+                0 22px 66px rgba(0, 0, 0, 0.77),
+                0 10px 28px rgba(99, 102, 241, 0.12),
+                inset 0 1px 2px rgba(255, 255, 255, 0.12),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                width: calc(100% - 32px);
+                margin: 16px;
+                padding: 40px 24px;
+                border-radius: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                width: calc(100% - 24px);
+                margin: 12px;
+                padding: 32px 20px;
+                border-radius: 20px;
+            }
         }
 
         main[data-focus="false"] {
-            opacity: 0.6;
-            filter: contrast(0.97) saturate(0.97);
+            opacity: 0.65;
+            filter: contrast(0.97) saturate(0.97) brightness(0.98);
+            transform: scale(0.998);
         }
 
         .profile-border-container {
             box-shadow:
-                calc(var(--lx) * 2px) calc(var(--ly) * 2px) 40px rgba(0, 0, 0, 0.2),
-                calc(var(--lx) * 0.5px) calc(var(--ly) * 0.5px) 20px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                calc(var(--lx) * 3px) calc(var(--ly) * 3px) 50px rgba(0, 0, 0, 0.25),
+                calc(var(--lx) * 1px) calc(var(--ly) * 1px) 24px rgba(99, 102, 241, 0.12),
+                calc(var(--lx) * 0.5px) calc(var(--ly) * 0.5px) 12px rgba(139, 92, 246, 0.08);
+            transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         @keyframes breathe {
@@ -473,15 +590,23 @@
             0%,
             100% {
                 transform: scale(1) translateY(0);
+                box-shadow: 
+                    0 20px 60px rgba(0, 0, 0, 0.7),
+                    0 10px 30px rgba(99, 102, 241, 0.15),
+                    0 4px 16px rgba(0, 0, 0, 0.8);
             }
 
             50% {
-                transform: scale(1.015) translateY(-1px);
+                transform: scale(1.012) translateY(-2px);
+                box-shadow: 
+                    0 24px 70px rgba(0, 0, 0, 0.75),
+                    0 12px 36px rgba(99, 102, 241, 0.25),
+                    0 6px 20px rgba(139, 92, 246, 0.2);
             }
         }
 
         .profile-border-container.idle {
-            animation: breathe 3.5s ease-in-out infinite;
+            animation: breathe 4s ease-in-out infinite;
         }
 
         body[data-depth="deep"] {
@@ -492,12 +617,19 @@
             font-family: var(--font);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         p {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .debug * {
@@ -525,10 +657,7 @@
     </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center antialiased" data-theme="light" aria-label="Main content">
-    <canvas id="three-canvas"
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.25;"></canvas>
-
+<body class="min-h-screen flex items-center justify-center antialiased p-0 m-0" data-theme="light" aria-label="Main content">
     <a href="#main-content"
         class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:shadow-lg">
         Skip to main content
@@ -537,62 +666,82 @@
     <div class="motion-respect">Motion respects system preferences</div>
 
     <main id="main-content" class="relative z-10" role="main" aria-label="Welcome message">
-        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
-            <div class="profile-border-container w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 relative flex-shrink-0"
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 sm:gap-10 md:gap-12 lg:gap-20 w-full max-w-full">
+            <div class="profile-border-container w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 relative flex-shrink-0"
                 tabindex="0" role="img" aria-label="Profile picture">
                 <div class="profile-border-inner w-full h-full relative z-10">
                     <div class="profile-image-wrapper w-full h-full">
                         <img src="assets/main_profile.png" alt="Profile picture of Thikander" loading="eager"
-                            decoding="async" id="profile-img-src">
+                            decoding="async" id="profile-img-src" draggable="false" oncontextmenu="return false;" ondragstart="return false;">
                     </div>
                 </div>
             </div>
             <div
-                class="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 lg:gap-5 flex-1 max-w-2xl">
-                <div class="space-y-2">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extralight text-slate-100 leading-tight tracking-wide"
-                        style="font-weight: 200;">
+                class="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 lg:gap-7 flex-1 max-w-2xl w-full">
+                <div class="space-y-3">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-slate-100 leading-tight tracking-tight"
+                        style="font-weight: 200; letter-spacing: -0.02em;">
                         <span class="inline-block">Theerapat</span>
                         <span class="inline-block">Pinkrajan</span>
                     </h1>
-                    <p class="text-base sm:text-lg md:text-xl font-extralight text-slate-400 tracking-wide"
-                        style="font-weight: 200;">
-                        Senior Full Stack Developer
-                    </p>
+                    <div class="flex items-center justify-center lg:justify-start gap-3">
+                        <div class="h-px w-8 bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent"></div>
+                        <p class="text-sm sm:text-base md:text-lg font-light text-slate-300/90 tracking-wider uppercase"
+                            style="font-weight: 300; letter-spacing: 0.15em;">
+                            Senior Full Stack Developer
+                        </p>
+                        <div class="h-px w-8 bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent"></div>
+                    </div>
                 </div>
-                <div class="text-sm sm:text-base text-slate-200/90 leading-relaxed space-y-3 max-w-xl">
-                    <p>I'm a Full Stack Developer with 4 years of experience working on web systems for real business
+                <div class="text-sm sm:text-base text-slate-300/80 leading-relaxed space-y-4 max-w-xl" style="line-height: 1.75;">
+                    <p class="font-light">I'm a Full Stack Developer with 4 years of experience working on web systems for real business
                         use. My main experience is with Angular, along with .NET Core, Spring Boot, and PostgreSQL, and
                         I enjoy learning new frameworks and programming languages.</p>
-                    <p>I usually work across frontend and backend, help design databases, improve query performance, and
+                    <p class="font-light">I usually work across frontend and backend, help design databases, improve query performance, and
                         support deployment using Docker and GitHub Actions on AWS. In my own time, I build side projects
                         using different stacks to explore new tools and improve my skills. I focus on writing clear,
                         maintainable code and building systems that are stable and practical.</p>
                 </div>
-<div class="flex flex-col gap-2.5 items-center lg:items-start w-full">
-    <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,angular,nextjs,vue,svelte,tailwind,bootstrap,htmx&size=36"
-        alt="Frontend skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                <div class="h-px w-full bg-gradient-to-r from-transparent via-slate-700/50 to-transparent"></div>
+                <div class="flex flex-col gap-3 items-center lg:items-start w-full max-w-full">
+                    <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,angular,nextjs,vue,svelte,tailwind,bootstrap,htmx&size=36"
+                        alt="Frontend skills" class="rounded-xl shadow-lg border border-slate-800/60 bg-slate-900/60 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300 hover:shadow-indigo-500/20" draggable="false">
 
-    <img src="https://skillicons.dev/icons?i=nodejs,express,deno,bun,dotnet,java,spring,py,go,prisma&size=36"
-        alt="Backend skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=nodejs,express,deno,bun,dotnet,java,spring,py,go,prisma&size=36"
+                        alt="Backend skills" class="rounded-xl shadow-lg border border-slate-800/60 bg-slate-900/60 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300 hover:shadow-indigo-500/20" draggable="false">
 
-    <img src="https://skillicons.dev/icons?i=mysql,postgres,firebase,redis&size=36"
-        alt="Database skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=mysql,postgres,firebase,redis&size=36"
+                        alt="Database skills" class="rounded-xl shadow-lg border border-slate-800/60 bg-slate-900/60 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300 hover:shadow-indigo-500/20" draggable="false">
 
-    <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,ubuntu,githubactions,jenkins&size=36"
-        alt="DevOps skills" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,ubuntu,githubactions,jenkins&size=36"
+                        alt="DevOps skills" class="rounded-xl shadow-lg border border-slate-800/60 bg-slate-900/60 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300 hover:shadow-indigo-500/20" draggable="false">
 
-    <img src="https://skillicons.dev/icons?i=git,github,vscode,visualstudio,figma,ps&size=36"
-        alt="Tools" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=git,github,vscode,visualstudio,figma,ps&size=36"
+                        alt="Tools" class="rounded-xl shadow-lg border border-slate-800/60 bg-slate-900/60 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300 hover:shadow-indigo-500/20" draggable="false">
 
-    <img src="https://skillicons.dev/icons?i=npm,pnpm,yarn,tauri,electron,bash&size=36"
-        alt="Runtimes" class="rounded-lg shadow-sm border border-slate-950/80 bg-slate-950/80">
+                    <img src="https://skillicons.dev/icons?i=npm,pnpm,yarn,tauri,electron,bash&size=36" alt="Runtimes"
+                        class="rounded-xl shadow-lg border border-slate-800/60 bg-slate-900/60 backdrop-blur-sm hover:border-indigo-500/40 transition-all duration-300 hover:shadow-indigo-500/20" draggable="false">
 
-    <div
-        class="text-xs sm:text-sm text-slate-200/90 px-3 py-1.5 rounded-lg bg-slate-950/80 border border-slate-900/80 shadow-sm">
-        Cursor · ChatGPT · Claude · Gemini · GitHub Copilot · Perplexity
-    </div>
-</div>
+                    <div
+                        class="text-xs sm:text-sm font-light text-slate-300/80 px-4 py-2 rounded-xl bg-slate-900/50 border border-slate-800/60 shadow-md backdrop-blur-sm hover:border-indigo-500/30 transition-all duration-300"
+                        style="letter-spacing: 0.02em;">
+                        Cursor · ChatGPT · Claude · Gemini · GitHub Copilot · Perplexity
+                    </div>
+                </div>
+                <div class="h-px w-full bg-gradient-to-r from-transparent via-slate-700/50 to-transparent"></div>
+                <div class="flex items-center lg:items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400/70" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <a href="mailto:thiknader@gmail.com"
+                        class="text-xs font-light text-slate-400/80 hover:text-indigo-400 transition-all duration-300 hover:tracking-wide"
+                        style="letter-spacing: 0.03em;"
+                        aria-label="Email contact">
+                        thiknader@gmail.com
+                    </a>
+                </div>
             </div>
         </div>
     </main>
@@ -689,6 +838,31 @@
                     if ('fetchPriority' in profileImg) {
                         profileImg.fetchPriority = 'high';
                     }
+                    
+                    profileImg.addEventListener('contextmenu', (e) => e.preventDefault());
+                    profileImg.addEventListener('dragstart', (e) => e.preventDefault());
+                    profileImg.addEventListener('selectstart', (e) => e.preventDefault());
+                }
+            };
+            
+            const imageProtection = {
+                init() {
+                    const images = document.querySelectorAll('img');
+                    images.forEach(img => {
+                        img.addEventListener('contextmenu', (e) => e.preventDefault());
+                        img.addEventListener('dragstart', (e) => e.preventDefault());
+                        img.addEventListener('selectstart', (e) => e.preventDefault());
+                        img.setAttribute('draggable', 'false');
+                    });
+                    
+                    document.addEventListener('keydown', (e) => {
+                        if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+                            const activeElement = document.activeElement;
+                            if (activeElement && activeElement.tagName === 'IMG') {
+                                e.preventDefault();
+                            }
+                        }
+                    });
                 }
             };
 
@@ -901,6 +1075,7 @@
                 errorHandler.init();
                 animationObserver.init();
                 profileImageHandler.init();
+                imageProtection.init();
                 scrollLinkedInteractions.init();
                 cursorAwareUI.init();
                 attentionAwareText.init();
@@ -909,246 +1084,6 @@
                 ambientLightSource.init();
                 idleAnimations.init();
                 scrollActivatedFontSwap.init();
-            }
-
-            const threeScene = {
-                async init() {
-                    let THREE;
-                    try {
-                        THREE = await import('three');
-                        THREE = THREE.default || THREE;
-                    } catch (e) {
-                        return;
-                    }
-                    const canvas = document.getElementById('three-canvas');
-                    if (!canvas) return;
-                    const scene = new THREE.Scene();
-                    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-                    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-                    renderer.setSize(window.innerWidth, window.innerHeight);
-                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                    const particlesGeometry = new THREE.BufferGeometry();
-                    const particlesCount = 1900;
-                    const posArray = new Float32Array(particlesCount * 3);
-                    const velocityArray = new Float32Array(particlesCount * 3);
-                    const basePositions = new Float32Array(particlesCount * 3);
-                    for (let i = 0; i < particlesCount; i++) {
-                        const r = Math.random() * 6.5 + 2;
-                        const theta = Math.random() * Math.PI * 2;
-                        const phi = Math.acos((Math.random() * 2) - 1);
-                        const x = r * Math.sin(phi) * Math.cos(theta);
-                        const y = r * Math.sin(phi) * Math.sin(theta);
-                        const z = r * Math.cos(phi);
-                        posArray[i * 3] = x;
-                        posArray[i * 3 + 1] = y;
-                        posArray[i * 3 + 2] = z;
-                        basePositions[i * 3] = x;
-                        basePositions[i * 3 + 1] = y;
-                        basePositions[i * 3 + 2] = z;
-                        velocityArray[i * 3] = (Math.random() - 0.5) * 0.0018;
-                        velocityArray[i * 3 + 1] = (Math.random() - 0.5) * 0.0018;
-                        velocityArray[i * 3 + 2] = (Math.random() - 0.5) * 0.0015;
-                    }
-                    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-                    const particlesMaterial = new THREE.PointsMaterial({
-                        size: 0.036,
-                        color: 0xa5b4fc,
-                        transparent: true,
-                        opacity: 0.55,
-                        blending: THREE.AdditiveBlending,
-                        depthWrite: false
-                    });
-                    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-                    scene.add(particlesMesh);
-                    const ringCount = 320;
-                    const ringPositions = new Float32Array(ringCount * 3);
-                    const ringBase = [];
-                    for (let i = 0; i < ringCount; i++) {
-                        const r = 1.1 + Math.random() * 1.6;
-                        const theta = Math.random() * Math.PI * 2;
-                        const z = (Math.random() - 0.5) * 0.6;
-                        ringBase.push({ r, theta, z });
-                        ringPositions[i * 3] = Math.cos(theta) * r;
-                        ringPositions[i * 3 + 1] = Math.sin(theta) * r * 0.4;
-                        ringPositions[i * 3 + 2] = z;
-                    }
-                    const ringGeometry = new THREE.BufferGeometry();
-                    ringGeometry.setAttribute('position', new THREE.BufferAttribute(ringPositions, 3));
-                    const ringMaterial = new THREE.PointsMaterial({
-                        size: 0.028,
-                        color: 0x818cf8,
-                        transparent: true,
-                        opacity: 0.6,
-                        blending: THREE.AdditiveBlending,
-                        depthWrite: false
-                    });
-                    const ringMesh = new THREE.Points(ringGeometry, ringMaterial);
-                    scene.add(ringMesh);
-                    const torusGeometry = new THREE.TorusGeometry(2.5, 0.08, 16, 100);
-                    const torusMaterial = new THREE.MeshBasicMaterial({
-                        color: 0x6366f1,
-                        transparent: true,
-                        opacity: 0.25,
-                        wireframe: true
-                    });
-                    const torus = new THREE.Mesh(torusGeometry, torusMaterial);
-                    scene.add(torus);
-                    const icosahedronGeometry = new THREE.IcosahedronGeometry(1.8, 0);
-                    const icosahedronMaterial = new THREE.MeshBasicMaterial({
-                        color: 0x8b5cf6,
-                        transparent: true,
-                        opacity: 0.2,
-                        wireframe: true
-                    });
-                    const icosahedron = new THREE.Mesh(icosahedronGeometry, icosahedronMaterial);
-                    scene.add(icosahedron);
-                    const ambientLight = new THREE.AmbientLight(0x6366f1, 0.3);
-                    scene.add(ambientLight);
-                    const pointLight = new THREE.PointLight(0x8b5cf6, 0.8, 100);
-                    pointLight.position.set(5, 5, 5);
-                    scene.add(pointLight);
-                    camera.position.z = 9;
-                    let mouseX = 0;
-                    let mouseY = 0;
-                    const profileContainer = document.querySelector('.profile-border-container');
-                    let hoveringProfile = false;
-                    document.addEventListener('mousemove', (e) => {
-                        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-                        mouseY = (e.clientY / window.innerHeight) * 2 - 1;
-                    }, { passive: true });
-                    if (profileContainer) {
-                        profileContainer.addEventListener('mouseenter', () => {
-                            hoveringProfile = true;
-                        });
-                        profileContainer.addEventListener('mouseleave', () => {
-                            hoveringProfile = false;
-                        });
-                    }
-                    const getProfileCenter = () => {
-                        if (!profileContainer) return new THREE.Vector3(0, 0, 0);
-                        const rect = profileContainer.getBoundingClientRect();
-                        const x = ((rect.left + rect.width / 2) / window.innerWidth) * 2 - 1;
-                        const y = -(((rect.top + rect.height / 2) / window.innerHeight) * 2 - 1);
-                        const v = new THREE.Vector3(x, y, 0).unproject(camera);
-                        return v;
-                    };
-                    const clock = new THREE.Clock();
-                    const animate = () => {
-                        requestAnimationFrame(animate);
-                        const elapsed = clock.getElapsedTime();
-                        const positions = particlesGeometry.attributes.position.array;
-                        const target = hoveringProfile ? getProfileCenter() : new THREE.Vector3(0, 0, 0);
-                        const pulse = 0.4 + Math.sin(elapsed * 0.8) * 0.4;
-                        const hueShift = 0.62 + Math.sin(elapsed * 0.22) * 0.035;
-                        particlesMaterial.color.setHSL(hueShift, 0.12 + (hoveringProfile ? 0.14 : 0.08), 0.48 + pulse * 0.05);
-                        ringMaterial.color.setHSL(hueShift + 0.04, 0.2, 0.6 + pulse * 0.05);
-                        const basePull = (hoveringProfile ? 0.07 : 0.018) + pulse * 0.01;
-                        const anchorPull = hoveringProfile ? 0.008 : 0.013;
-                        const minRadius = hoveringProfile ? 1.7 : 3.3;
-                        const maxRadius = hoveringProfile ? 5.0 : 7.8;
-                        for (let i = 0; i < particlesCount; i++) {
-                            const ix = i * 3;
-                            const iy = ix + 1;
-                            const iz = ix + 2;
-                            let px = positions[ix];
-                            let py = positions[iy];
-                            let pz = positions[iz];
-                            const swirl = 0.0028;
-                            const sinT = Math.sin(elapsed * 0.9 + i * 0.17) * swirl;
-                            const cosT = Math.cos(elapsed * 0.95 + i * 0.11) * swirl;
-                            px += velocityArray[ix] + cosT;
-                            py += velocityArray[iy] + sinT;
-                            pz += velocityArray[iz] * 0.6;
-                            const dx = target.x - px;
-                            const dy = target.y - py;
-                            const dz = target.z - pz;
-                            const dist = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1;
-                            const strength = basePull * (hoveringProfile ? 1.4 : 1) / dist;
-                            px += dx * strength;
-                            py += dy * strength;
-                            pz += dz * strength;
-                            const bax = basePositions[ix] - px;
-                            const bay = basePositions[iy] - py;
-                            const baz = basePositions[iz] - pz;
-                            px += bax * anchorPull;
-                            py += bay * anchorPull;
-                            pz += baz * anchorPull;
-                            const current = Math.sqrt(px * px + py * py + pz * pz);
-                            if (current < minRadius) {
-                                const ratio = minRadius / (current || 1);
-                                px *= ratio;
-                                py *= ratio;
-                                pz *= ratio;
-                            } else if (current > maxRadius) {
-                                const ratio = maxRadius / current;
-                                px *= ratio;
-                                py *= ratio;
-                                pz *= ratio;
-                            }
-                            positions[ix] = px;
-                            positions[iy] = py;
-                            positions[iz] = pz;
-                        }
-                        particlesGeometry.attributes.position.needsUpdate = true;
-                        const ringArr = ringGeometry.attributes.position.array;
-                        for (let i = 0; i < ringCount; i++) {
-                            const ix = i * 3;
-                            const iy = ix + 1;
-                            const iz = ix + 2;
-                            const base = ringBase[i];
-                            const ang = base.theta + elapsed * 0.6 + i * 0.003 + (hoveringProfile ? 0.4 : 0.15);
-                            const rad = base.r * (hoveringProfile ? 1 + pulse * 0.08 : 1 + pulse * 0.14);
-                            const yWave = Math.sin(elapsed * 1.2 + i * 0.05) * (hoveringProfile ? 0.18 : 0.1);
-                            ringArr[ix] = target.x + Math.cos(ang) * rad;
-                            ringArr[iy] = target.y + Math.sin(ang) * rad * 0.4 + yWave;
-                            ringArr[iz] = target.z + base.z * 0.6 + Math.cos(elapsed * 0.9 + i * 0.07) * 0.08;
-                        }
-                        ringGeometry.attributes.position.needsUpdate = true;
-                        ringMaterial.size = 0.026 + pulse * 0.01 + (hoveringProfile ? 0.004 : 0);
-                        torus.rotation.x += 0.004;
-                        torus.rotation.y += 0.006;
-                        torus.rotation.z += 0.002;
-                        torus.scale.setScalar(1 + Math.sin(elapsed * 0.5) * 0.1);
-                        torusMaterial.opacity = 0.2 + Math.sin(elapsed * 0.8) * 0.1;
-                        icosahedron.rotation.x += 0.003;
-                        icosahedron.rotation.y += 0.005;
-                        icosahedron.rotation.z += 0.001;
-                        icosahedron.scale.setScalar(1 + Math.cos(elapsed * 0.6) * 0.12);
-                        icosahedronMaterial.opacity = 0.15 + Math.cos(elapsed * 0.7) * 0.1;
-                        pointLight.position.x = Math.sin(elapsed * 0.3) * 6;
-                        pointLight.position.y = Math.cos(elapsed * 0.4) * 6;
-                        pointLight.position.z = 5 + Math.sin(elapsed * 0.5) * 3;
-                        pointLight.intensity = 0.6 + Math.sin(elapsed * 0.8) * 0.3;
-                        const lookX = mouseX * 0.3;
-                        const lookY = mouseY * 0.3;
-                        camera.position.x += (lookX - camera.position.x) * 0.08;
-                        camera.position.y += (-lookY - camera.position.y) * 0.08;
-                        camera.lookAt(scene.position);
-                        renderer.render(scene, camera);
-                    };
-                    window.addEventListener('resize', () => {
-                        camera.aspect = window.innerWidth / window.innerHeight;
-                        camera.updateProjectionMatrix();
-                        renderer.setSize(window.innerWidth, window.innerHeight);
-                    }, { passive: true });
-                    animate();
-                }
-            };
-
-            const interactiveProfile3D = {
-                init() { }
-            };
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', async () => {
-                    await threeScene.init();
-                    await interactiveProfile3D.init();
-                });
-            } else {
-                (async () => {
-                    await threeScene.init();
-                    await interactiveProfile3D.init();
-                })();
             }
         })();
     </script>
