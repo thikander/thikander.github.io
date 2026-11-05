@@ -1,198 +1,250 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#0b0f16">
-    <meta name="color-scheme" content="dark light">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theerapat Pinkrajan</title>
+<meta name="description" content="Theerapat Pinkrajan — a small collection of things I made.">
+<meta name="author" content="Theerapat Pinkrajan">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://thikander.github.io/">
+<meta property="og:title" content="Theerapat Pinkrajan">
+<meta property="og:description" content="A small collection of things I made.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😗</text></svg>">
+<link rel="canonical" href="https://thikander.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Person", "name": "Theerapat Pinkrajan",
+  "url": "https://thikander.github.io/", "sameAs": ["https://github.com/thikander"] }
+</script>
+<style>
+  :root {
+    --ink:#1b1a1f; --muted:#8a8791; --line:#1b1a1f; --soft:#f3f2f5; --bg:#ffffff;
+    --accent:#168fe0; --red:#f02b32; --px:3px;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; background:var(--bg); color:var(--ink); }
+  body { font-family:"Pixelify Sans", Consolas, monospace; -webkit-font-smoothing:none; }
+  img, canvas { image-rendering:pixelated; image-rendering:crisp-edges; }
+  a { color:inherit; }
+  .wrap { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
 
-    <title>Thikander</title>
-    <meta name="title" content="Thikander">
-    <meta name="description" content="Theerapat Pinkrajan">
-    <meta name="keywords" content="Thikander, web development, minimal design">
-    <meta name="author" content="Thikander">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
+  /* pixel box: hard border + hard offset shadow */
+  .px { border:var(--px) solid var(--line); box-shadow:var(--px) var(--px) 0 var(--line); background:#fff; }
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thikander.github.io/">
-    <meta property="og:title" content="Thikander">
-    <meta property="og:description" content="Theerapat Pinkrajan">
-    <meta property="og:site_name" content="Thikander">
-    <meta property="og:locale" content="en_US">
+  /* cover */
+  .cover { position:relative; height:auto; }
+  .cover canvas { display:block; width:100%; height:auto; }
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://thikander.github.io/">
-    <meta name="twitter:title" content="Thikander">
-    <meta name="twitter:description" content="Theerapat Pinkrajan">
+  /* profile header */
+  .head { display:flex; align-items:flex-end; gap:20px; padding:0 20px; position:relative; flex-wrap:wrap; }
+  .avatar { width:160px; height:160px; flex:none; padding:6px; background:#fff; margin-top:-72px; position:relative; z-index:1; }
+  .avatar img { display:block; width:100%; height:100%; }
+  .who { flex:1; min-width:220px; padding:20px 0 4px; }
+  .who h1 { margin:0; font-size:clamp(28px,5vw,38px); font-weight:700; letter-spacing:.01em; line-height:1.05; }
+  .who .handle { margin-top:6px; color:var(--muted); font-size:16px; }
+  .who .stats { margin-top:6px; font-size:16px; }
+  .who .stats b { font-weight:700; }
+  .actions { display:flex; gap:10px; padding-bottom:10px; }
+  .btn {
+    display:inline-flex; align-items:center; gap:8px; padding:8px 14px; font:600 15px "Pixelify Sans", monospace;
+    text-decoration:none; color:var(--ink); background:#fff; border:var(--px) solid var(--line);
+    box-shadow:var(--px) var(--px) 0 var(--line); transition:transform .06s, box-shadow .06s;
+  }
+  .btn:hover { transform:translate(-1px,-1px); box-shadow:calc(var(--px) + 1px) calc(var(--px) + 1px) 0 var(--line); }
+  .btn:active { transform:translate(var(--px),var(--px)); box-shadow:0 0 0 var(--line); }
+  .btn.dark { background:var(--ink); color:#fff; }
 
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😗</text></svg>">
-    <link rel="apple-touch-icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😗</text></svg>">
+  /* tabs */
+  .tabs { display:flex; gap:24px; margin:28px 0 18px; border-bottom:var(--px) solid var(--line); padding:0 4px; }
+  .tab { padding:10px 2px; font-size:17px; font-weight:600; position:relative; }
+  .tab.on::after { content:""; position:absolute; left:0; right:0; bottom:calc(var(--px) * -1); height:6px; background:var(--accent); }
+  .tab .n { color:var(--muted); font-weight:400; margin-left:4px; }
 
-    <link rel="canonical" href="https://thikander.github.io/">
+  /* collection grid */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:22px; }
+  .item { position:relative; display:block; text-decoration:none; color:var(--ink); outline:none; }
+  .item .box { position:relative; aspect-ratio:1; padding:14px; display:grid; place-items:center; transition:transform .08s, box-shadow .08s; }
+  .item .box canvas.icon { width:100%; height:auto; }
+  .item:hover .box, .item:focus-visible .box { transform:translate(-2px,-3px); box-shadow:calc(var(--px) + 2px) calc(var(--px) + 3px) 0 var(--line); }
+  .item:active .box { transform:translate(var(--px),var(--px)); box-shadow:0 0 0 var(--line); }
+  .item .name { margin-top:12px; font-size:16px; font-weight:600; }
+  .item .meta { margin-top:2px; font-size:13px; color:var(--muted); }
+  .item .tag {
+    position:absolute; top:-12px; left:10px; z-index:2; padding:2px 7px; font-size:12px; font-weight:600;
+    background:var(--red); color:#fff; border:2px solid var(--line);
+  }
+  .item canvas.pet { position:absolute; width:40%; right:-6px; top:-30px; z-index:3; pointer-events:none; }
+  .slot .box { border-style:dashed; box-shadow:none; background:var(--soft); color:#c4c1ca; font-size:34px; }
+  .slot .name, .slot .meta { color:#b8b5bf; }
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  footer { margin-top:56px; text-align:center; color:var(--muted); font-size:13px; }
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Theerapat Pinkrajan",
-        "url": "https://thikander.github.io/",
-        "description": "Theerapat Pinkrajan - Personal Portfolio"
-    }
-    </script>
-
-    <style>
-        :root {
-            --color-text: #f1f5f9;
-            --color-text-muted: #94a3b8;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            color: var(--color-text);
-            background: radial-gradient(ellipse at 30% 20%, #030712 0%, #0a0f1a 20%, #0f172a 40%, #1e1b4b 60%, #1a1544 75%, #0a0f1a 88%, #000000 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        *:focus-visible {
-            outline: 2px solid rgba(99, 102, 241, 0.6);
-            outline-offset: 3px;
-            border-radius: 8px;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.03) 1px, rgba(0, 0, 0, 0.03) 2px),
-                repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0, 0, 0, 0.03) 1px, rgba(0, 0, 0, 0.03) 2px);
-            opacity: 0.04;
-            pointer-events: none;
-            z-index: 1;
-            mix-blend-mode: overlay;
-        }
-
-        main {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 32px;
-        }
-
-        h1 {
-            font-weight: 200;
-            font-size: clamp(2.25rem, 6vw, 4rem);
-            letter-spacing: -0.02em;
-            margin: 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 35%, #c7d2fe 60%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .divider {
-            height: 1px;
-            width: 48px;
-            margin: 20px auto;
-            background: linear-gradient(to right, transparent, rgba(99, 102, 241, 0.6), transparent);
-        }
-
-        p.tagline {
-            font-weight: 300;
-            font-size: clamp(0.8rem, 2vw, 1rem);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--color-text-muted);
-            margin: 0;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .sr-only:focus {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            width: auto;
-            height: auto;
-            padding: 0.5rem 1rem;
-            margin: 0;
-            overflow: visible;
-            clip: auto;
-            white-space: normal;
-            background: #4338ca;
-            color: #fff;
-            border-radius: 6px;
-            z-index: 50;
-        }
-    </style>
+  @media (max-width:520px) {
+    .head { padding:0 8px; gap:14px; }
+    .avatar { width:120px; height:120px; margin-top:-56px; }
+    .grid { grid-template-columns:repeat(2, 1fr); gap:18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
 </head>
+<body>
+<div class="wrap">
+  <div class="cover px"><canvas id="cover" width="240" height="72" aria-hidden="true"></canvas></div>
 
-<body data-theme="light">
-    <a href="#main-content"
-        class="sr-only">
-        Skip to main content
+  <header class="head">
+    <div class="who">
+      <h1>Theerapat Pinkrajan</h1>
+      <div class="handle">@thikander</div>
+      <div class="stats"><b id="count">1</b> project in the collection</div>
+    </div>
+    <div class="actions">
+      <a class="btn dark" href="https://github.com/thikander" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Sections">
+    <div class="tab on">Collection<span class="n">1</span></div>
+  </nav>
+
+  <main class="grid" id="grid">
+    <a class="item" href="mini-digital-cluster/" aria-label="Mini Digital Cluster — play in browser">
+      <span class="tag">NEW</span>
+      <canvas class="pet" id="pet" width="20" height="17" aria-hidden="true"></canvas>
+      <div class="box px"><canvas class="icon" id="icon-cluster" width="32" height="32" aria-hidden="true"></canvas></div>
+      <div class="name">Mini Digital Cluster</div>
+      <div class="meta">Turbo + CVT sim · play</div>
     </a>
+    <div class="item slot" aria-hidden="true"><div class="box px">?</div><div class="name">Empty slot</div><div class="meta">soon</div></div>
+    <div class="item slot" aria-hidden="true"><div class="box px">?</div><div class="name">Empty slot</div><div class="meta">soon</div></div>
+    <div class="item slot" aria-hidden="true"><div class="box px">?</div><div class="name">Empty slot</div><div class="meta">soon</div></div>
+  </main>
 
-    <main id="main-content" role="main" aria-label="Welcome message">
-        <h1 data-aos="fade-up" data-aos-duration="900">Theerapat Pinkrajan</h1>
-        <div class="divider" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200"></div>
-        <p class="tagline" data-aos="fade-up" data-aos-duration="900" data-aos-delay="350">Senior Full Stack Developer</p>
-    </main>
+  <footer>© <span id="yr"></span> Theerapat Pinkrajan</footer>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        });
-    </script>
+<script>
+(() => {
+  "use strict";
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- cover: pixel day scene with a tiny car ---------- */
+  const cv = document.getElementById("cover"), c = cv.getContext("2d");
+  const W = 240, H = 72;
+  const hash = n => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+  const hillA = [], hillB = [];
+  for (let x = 0; x < 480; x++) { const a = x / 480 * Math.PI * 2;
+    hillA.push(14 + 5 * Math.sin(a * 2 + 1) + 3 * Math.sin(a * 5) + 1.5 * Math.sin(a * 11));
+    hillB.push(8 + 3 * Math.sin(a * 3 + 2) + 2 * Math.sin(a * 7 + 1)); }
+  const clouds = [[20, 12, 1], [90, 7, 0.7], [150, 16, 1.2], [210, 9, 0.8]];
+  function cloud(x, y, s) {
+    c.fillStyle = "#ffffff";
+    const r = [[0, 3, 14 * s, 4], [3 * s, 0, 8 * s, 4], [8 * s, 1, 6 * s, 3]];
+    for (const [dx, dy, w, h] of r) c.fillRect(Math.round(x + dx), y + dy, Math.round(w), h);
+    c.fillStyle = "#c9d6e6"; c.fillRect(Math.round(x), y + 7, Math.round(14 * s), 1);
+  }
+  function car(x, y, t) {
+    const bob = ((t / 120) | 0) % 2;
+    c.fillStyle = "#1b1a1f"; c.fillRect(x, y - 5 + bob, 14, 4); c.fillRect(x + 3, y - 8 + bob, 7, 3);
+    c.fillStyle = "#f02b32"; c.fillRect(x + 1, y - 4 + bob, 12, 2);
+    c.fillStyle = "#bfe3ff"; c.fillRect(x + 4, y - 7 + bob, 2, 2); c.fillRect(x + 7, y - 7 + bob, 2, 2);
+    c.fillStyle = "#ffd94a"; c.fillRect(x + 13, y - 4 + bob, 1, 1);
+    c.fillStyle = "#1b1a1f"; c.fillRect(x + 2, y - 1, 3, 2); c.fillRect(x + 9, y - 1, 3, 2);
+  }
+  function drawCover(t) {
+    const g = c.createLinearGradient(0, 0, 0, 44); g.addColorStop(0, "#d9ecff"); g.addColorStop(1, "#f6fbff");
+    c.fillStyle = g; c.fillRect(0, 0, W, H);
+    // sun
+    c.fillStyle = "#ffd77a"; for (let i = -5; i <= 5; i++) { const w = Math.round(Math.sqrt(25 - i * i)); c.fillRect(196 - w, 14 + i, w * 2, 1); }
+    for (const cl of clouds) cloud(((cl[0] + t * 0.004 * cl[2]) % (W + 30)) - 20, cl[1], cl[2]);
+    const o1 = t * 0.006, o2 = t * 0.015;
+    c.fillStyle = "#c6e3cf"; for (let x = 0; x < W; x++) { const h = hillA[((x + o1) | 0) % 480]; c.fillRect(x, 50 - h, 1, h); }
+    c.fillStyle = "#9fd0ad"; for (let x = 0; x < W; x++) { const h = hillB[((x + o2) | 0) % 480]; c.fillRect(x, 52 - h, 1, h); }
+    // ground + road
+    c.fillStyle = "#7fbf8f"; c.fillRect(0, 50, W, 6);
+    c.fillStyle = "#4a4950"; c.fillRect(0, 56, W, 10);
+    c.fillStyle = "#ffffff"; const dash = (t * 0.06) % 16; for (let x = -dash; x < W; x += 16) c.fillRect(Math.round(x), 61, 8, 1);
+    c.fillStyle = "#7fbf8f"; c.fillRect(0, 66, W, 6);
+    for (let i = 0; i < 12; i++) { const x = ((i * 23 - t * 0.03) % (W + 20) + W + 20) % (W + 20) - 10; // fence posts
+      c.fillStyle = "#e8e2d6"; c.fillRect(Math.round(x), 52, 2, 4); }
+    car(Math.round(((t * 0.035) % (W + 40)) - 20), 60, t);
+  }
+
+  /* ---------- icon: Mini Digital Cluster (32x32 pixel app box) ---------- */
+  const ic = document.getElementById("icon-cluster").getContext("2d");
+  let sweep = 0, sweepTarget = 0.18;
+  function drawIcon(t) {
+    ic.clearRect(0, 0, 32, 32);
+    // rounded dark tile
+    ic.fillStyle = "#0b0f16"; ic.fillRect(2, 0, 28, 32); ic.fillRect(0, 2, 32, 28); ic.fillRect(1, 1, 30, 30);
+    ic.fillStyle = "#26303f"; ic.fillRect(2, 1, 28, 1);
+    // gauge arc
+    const cx = 15.5, cy = 21.5, r = 11;
+    for (let y = 0; y < 32; y++) for (let x = 0; x < 32; x++) {
+      const dx = x + 0.5 - cx - 0.5, dy = y + 0.5 - cy - 0.5, d = Math.hypot(dx, dy);
+      if (dy <= 0.5 && Math.abs(d - r) < 0.62) { ic.fillStyle = "#e6e9ee"; ic.fillRect(x, y, 1, 1); }
+    }
+    // ticks
+    ic.fillStyle = "#8b929d";
+    for (let i = 0; i <= 6; i++) { const a = Math.PI - i / 6 * Math.PI; ic.fillRect(Math.round(cx + Math.cos(a) * 8.6), Math.round(cy - Math.sin(a) * 8.6), 1, 1); }
+    // needle
+    const a = Math.PI - sweep * Math.PI;
+    ic.fillStyle = "#f02b32";
+    for (let s = 0; s <= 8; s += 0.5) ic.fillRect(Math.round(cx + Math.cos(a) * s), Math.round(cy - Math.sin(a) * s), 1, 1);
+    ic.fillStyle = "#ffffff"; ic.fillRect(15, 21, 2, 2);
+    // rpm ramp bars
+    for (let i = 0; i < 7; i++) {
+      const lit = i < Math.round(sweep * 7) + 1;
+      ic.fillStyle = !lit ? "#222933" : i >= 6 ? "#f02b32" : i >= 5 ? "#ffb72b" : "#00f13c";
+      ic.fillRect(6 + i * 3, 28 - Math.round(i * 0.5), 2, 1 + Math.round(i * 0.5));
+    }
+  }
+
+  /* ---------- pet: tiny mochi sitting on the first item ---------- */
+  const pc = document.getElementById("pet").getContext("2d");
+  let blinkT = 2, blink = 0, hop = 0;
+  function drawPet(dt) {
+    blinkT -= dt; if (blinkT <= 0) { blink = 0.14; blinkT = 2 + Math.random() * 3; } blink -= dt;
+    hop = Math.max(0, hop - dt);
+    const lift = hop > 0 ? Math.round(Math.sin((1 - hop / 0.4) * Math.PI) * 3) : 0;
+    pc.clearRect(0, 0, 20, 17);
+    const cx = 10, by = 16 - lift, w = 8.5, h = 6.2, cy = by - h;
+    for (let y = 0; y < 17; y++) for (let x = 0; x < 20; x++) {
+      let dy = (y + 0.5 - cy) / h; const dx = (x + 0.5 - cx) / w; if (dy > 0) dy *= 1.2;
+      const inside = dx * dx + dy * dy <= 1;
+      if (!inside) continue;
+      const nb = [[1,0],[-1,0],[0,1],[0,-1]].some(([ax, ay]) => { let ey = (y + ay + 0.5 - cy) / h; const ex = (x + ax + 0.5 - cx) / w; if (ey > 0) ey *= 1.2; return ex * ex + ey * ey > 1; });
+      pc.fillStyle = nb ? "#4a2f3d" : (dx * 0.35 + dy * 0.9 > 0.5 ? "#f1cdd8" : "#fff3f6");
+      pc.fillRect(x, y, 1, 1);
+    }
+    pc.fillStyle = "#2b1b25";
+    const ey = Math.round(cy - 0.5);
+    if (blink > 0 || hop > 0) { pc.fillRect(6, ey + 1, 2, 1); pc.fillRect(12, ey + 1, 2, 1); }
+    else { pc.fillRect(6, ey, 1, 2); pc.fillRect(13, ey, 1, 2); }
+    pc.fillRect(9, ey + 2, 1, 1); pc.fillRect(11, ey + 2, 1, 1); pc.fillRect(10, ey + 3, 1, 1);
+    pc.fillStyle = "#ffb8c9"; pc.fillRect(4, ey + 2, 2, 1); pc.fillRect(14, ey + 2, 2, 1);
+  }
+
+  const item = document.querySelector(".item");
+  item.addEventListener("mouseenter", () => { sweepTarget = 1; hop = 0.4; });
+  item.addEventListener("mouseleave", () => { sweepTarget = 0.18; });
+  item.addEventListener("focus", () => { sweepTarget = 1; });
+  item.addEventListener("blur", () => { sweepTarget = 0.18; });
+
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    sweep += (sweepTarget - sweep) * Math.min(1, dt * (sweepTarget > sweep ? 3 : 1.6));
+    if (sweepTarget === 1 && sweep > 0.97) sweepTarget = 0.85;
+    drawCover(reduce ? 0 : now); drawIcon(now); drawPet(dt);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
-
 </html>
